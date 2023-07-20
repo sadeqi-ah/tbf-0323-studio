@@ -1,0 +1,26 @@
+.Colors {
+  background: #ffffff;
+  box-shadow: -50px 4px 100px rgba(0, 0, 0, 0.02),
+    -3px 4px 47px rgba(0, 0, 0, 0.02);
+  border-radius: 0px 16px 16px 0px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Colors > div {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: transform .1s;
+}
+
+.Colors > div:hover{
+  transform: scale(1.2);
+}

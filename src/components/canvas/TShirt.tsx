@@ -4,6 +4,7 @@ import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
+import { useSelectedColor } from "@/context/selected-color";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -19,9 +20,10 @@ type TShirtProps = JSX.IntrinsicElements["group"];
 function TShirt(props: TShirtProps) {
   const { nodes, materials } = useGLTF("/tshirt.glb") as GLTFResult;
   const modelRef = useRef<THREE.Group>(null);
+  const color = useSelectedColor()
 
   useFrame((state, delta) => {
-    easing.dampC(materials.tshirt_material.color, "#c8b6ff", 0.25, delta);
+    easing.dampC(materials.tshirt_material.color, color, 0.1, delta);
     // modelRef.current!.rotation.y += 0.01;
   });
 

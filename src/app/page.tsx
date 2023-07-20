@@ -1,13 +1,13 @@
-import Colors from "@/components/Colors";
+import Colors from "@/components/colors";
 import Canvas from "@/components/canvas";
-
-const colors = ['#ECECEC', '#CDB4DB', '#FFAFCC', '#A2D2FF', '#FFB703', '#ADC178', '#5E5E5E']
+import { colors } from "@/config";
+import { SelectedColorProvider } from "@/context/selected-color";
 
 export default function Home() {
   return (
-    <>
+    <SelectedColorProvider>
       <Canvas />
-      {/* <Colors colors={colors} /> */}
-    </>
+      <Colors colors={colors} />
+    </SelectedColorProvider>
   );
 }
