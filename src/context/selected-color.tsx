@@ -1,6 +1,6 @@
 "use client";
 
-import { colors } from "@/config";
+import { Color, colors } from "@/config";
 import React, {
   PropsWithChildren,
   createContext,
@@ -8,12 +8,12 @@ import React, {
   useState,
 } from "react";
 
-const SelectedColorContext = createContext<string | undefined>(undefined);
+const SelectedColorContext = createContext<Color | undefined>(undefined);
 const SelectedColorDispatchContext = createContext<
-  React.Dispatch<React.SetStateAction<string>> | undefined
+  React.Dispatch<React.SetStateAction<Color>> | undefined
 >(undefined);
 
-type SelectedColorProviderProps = PropsWithChildren<{ defaultColor?: string }>;
+type SelectedColorProviderProps = PropsWithChildren<{ defaultColor?: Color }>;
 
 export function SelectedColorProvider({
   children,
